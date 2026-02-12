@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Damla ❤️</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins', sans-serif;
+}
+
+body{
+    background: linear-gradient(135deg,#ff6a88,#ff99ac);
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    overflow:hidden;
+    color:white;
+}
+
+/* ZARF */
+
+.envelope-wrapper{
+    position:absolute;
+    text-align:center;
+    cursor:pointer;
+}
+
+.envelope{
+    width:220px;
+    height:140px;
+    background:#fff;
+    position:relative;
+    border-radius:6px;
+}
+
+.flap{
+    position:absolute;
+    top:0;
+    left:0;
+    width:0;
+    height:0;
+    border-left:110px solid transparent;
+    border-right:110px solid transparent;
+    border-top:70px solid #ff4f7b;
+    transform-origin:top;
+    transition:0.8s ease;
+}
+
+.envelope.open .flap{
+    transform:rotateX(180deg);
+}
+
+.envelope-text{
+    margin-top:20px;
+    font-size:18px;
+    color:white;
+}
+
+/* SITE */
+
+.card{
+    display:none;
+    backdrop-filter: blur(15px);
+    background: rgba(255,255,255,0.15);
+    padding:40px;
+    border-radius:25px;
+    text-align:center;
+    width:90%;
+    max-width:700px;
+    box-shadow:0 15px 40px rgba(0,0,0,0.2);
+    animation: fadeIn 1.5s ease;
+    overflow-y:auto;
+    max-height:90vh;
+}
+
+h1{
+    font-size:42px;
+    margin-bottom:10px;
+}
+
+.subtitle{
+    opacity:0.9;
+    margin-bottom:20px;
+}
+
+.counter{
+    margin:20px 0;
+    font-size:20px;
+    background:rgba(255,255,255,0.2);
+    padding:12px 20px;
+    border-radius:20px;
+}
+
+p{
+    margin-top:15px;
+    line-height:1.6;
+}
+
+.poem{
+    margin-top:25px;
+    font-style:italic;
+    line-height:1.7;
+}
+
+button{
+    margin-top:25px;
+    padding:12px 25px;
+    border:none;
+    border-radius:25px;
+    cursor:pointer;
+    background:white;
+    color:#ff4f7b;
+    transition:0.3s;
+}
+
+button:hover{
+    background:#ff4f7b;
+    color:white;
+}
+
+.hidden{
+    display:none;
+    margin-top:20px;
+}
+
+.signature{
+    margin-top:25px;
+    font-size:13px;
+    opacity:0.8;
+}
+
+@keyframes fadeIn{
+    from{opacity:0; transform:translateY(20px);}
+    to{opacity:1; transform:translateY(0);}
+}
+
+/* Kalpler */
+.heart{
+    position:fixed;
+    top:-10px;
+    font-size:18px;
+    animation: fall linear forwards;
+    opacity:0.8;
+}
+
+@keyframes fall{
+    to{
+        transform: translateY(100vh);
+        opacity:0;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- ZARF -->
+<div class="envelope-wrapper" onclick="openEnvelope()">
+    <div class="envelope" id="envelope">
+        <div class="flap"></div>
+    </div>
+    <div class="envelope-text">Sıhhiyem için bir mektup var 💌<br>(Açmak için dokun)</div>
+</div>
+
+<!-- SITE -->
+<div class="card" id="card">
+    <h1>Damla ❤️</h1>
+    <div class="subtitle">27.11.2024 — Hayatımın en güzel başlangıcı</div>
+
+    <div class="counter" id="counter"></div>
+
+    <p>
+    27.11.2024…  
+    O gün hayatımın en güzel başlangıcıydı.
+
+    Sen gelmeden önce her şey sıradandı,  
+    ama sen geldikten sonra dünya daha anlamlı oldu.  
+    Gülüşün huzurum, bakışın en sevdiğim yer oldu.
+
+    Damla…  
+    Ama benim için sadece Damla değilsin.  
+    Benim Sıhhiyem'sin.  
+
+    Kalbime damla damla mutluluk oldun.  
+    İyi ki varsın, iyi ki benimlesin. ❤️
+    </p>
+
+    <div class="poem">
+    <b>Sıhhiyem’e</b><br><br>
+
+    27 Kasım’da başladı<br>
+    Kalbimin en güzel hikayesi.<br>
+    Bir isim değildi sadece Damla,<br>
+    Bir ömürlük his oldu içimde.<br><br>
+
+    Gülüşün sabahım,<br>
+    Sesin en sevdiğim huzur.<br>
+    Yanımdayken dünya susuyor,<br>
+    Kalbim sadece seni duyuyor.<br><br>
+
+    Sıhhiyem…<br>
+    İsmin gibi şifa oldun bana.<br>
+    Varlığın en güzel mucizem,<br>
+    Sevgin en güçlü yanım.<br><br>
+
+    Ve eğer bir dilek hakkım varsa,<br>
+    Her sabah gözlerimi<br>
+    Seninle açmak isterim. ❤️
+    </div>
+
+    <button onclick="showMessage()">Özel Mesaj</button>
+
+    <div id="message" class="hidden">
+        Sıhhiyem…  
+        Seni her gün daha çok seviyorum.  
+        Ve hep seveceğim. ❤️
+    </div>
+
+    <div class="signature">
+        ✨ Bu site sadece benim Sıhhiyem için hazırlandı. ✨
+    </div>
+</div>
+
+<script>
+
+// Zarf açma
+function openEnvelope(){
+    document.getElementById("envelope").classList.add("open");
+    setTimeout(()=>{
+        document.querySelector(".envelope-wrapper").style.display="none";
+        document.getElementById("card").style.display="block";
+        startHearts();
+    },800);
+}
+
+// Sayaç
+const startDate = new Date("2024-11-27T00:00:00");
+
+function updateCounter(){
+    const now = new Date();
+    const diff = now - startDate;
+
+    const days = Math.floor(diff / (1000*60*60*24));
+    const hours = Math.floor((diff / (1000*60*60)) % 24);
+    const minutes = Math.floor((diff / (1000*60)) % 60);
+
+    document.getElementById("counter").innerHTML =
+        "❤️ " + days + " gün " + hours + " saat " + minutes + " dakikadır birlikteyiz ❤️";
+}
+
+setInterval(updateCounter,1000);
+updateCounter();
+
+// Özel mesaj
+function showMessage(){
+    document.getElementById("message").classList.remove("hidden");
+}
+
+// Kalpler
+function startHearts(){
+    setInterval(()=>{
+        const heart = document.createElement("div");
+        heart.classList.add("heart");
+        heart.innerHTML="❤";
+        heart.style.left=Math.random()*100+"vw";
+        heart.style.animationDuration=(Math.random()*4+3)+"s";
+        heart.style.fontSize=(Math.random()*10+15)+"px";
+        document.body.appendChild(heart);
+        setTimeout(()=>heart.remove(),7000);
+    },500);
+}
+
+</script>
+
+</body>
+</html>
